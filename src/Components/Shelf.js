@@ -6,6 +6,7 @@ const Shelf = (props) => {
 	Shelf.prototype = {
 		books: PropTypes.array.isRequired,
 		title: PropTypes.string.isRequired,
+		upadateBookShelf: PropTypes.func.isRequired,
 	};
 
 	return (
@@ -14,7 +15,11 @@ const Shelf = (props) => {
 			<div className="bookshelf-books">
 				<ol className="books-grid">
 					{props.books.map((book) => (
-						<Book key={book.id} bookItem={book} />
+						<Book
+							key={book.id}
+							bookItem={book}
+							upadateBookShelf={props.upadateBookShelf}
+						/>
 					))}
 				</ol>
 			</div>

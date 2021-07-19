@@ -3,10 +3,9 @@ import PropTypes from "prop-types";
 import BookShelfChanger from "./BookShelfChanger";
 
 const Book = (props) => {
-	console.log(props.bookItem);
-
 	Book.prototype = {
 		bookItem: PropTypes.object.isRequired,
+		upadateBookShelf: PropTypes.func.isRequired,
 	};
 
 	return (
@@ -25,11 +24,14 @@ const Book = (props) => {
 									: "none",
 						}}
 					/>
-					<BookShelfChanger bookItem={props.bookItem} />
+					<BookShelfChanger
+						bookItem={props.bookItem}
+						upadateBookShelf={props.upadateBookShelf}
+					/>
 				</div>
 				<div className="book-title">{props.bookItem.title}</div>
 				<div className="book-authors">
-					{props.bookItem.authors.length > 1
+					{props.bookItem.authors && props.bookItem.authors.length > 1
 						? props.bookItem.authors.join(", ")
 						: props.bookItem.authors}
 				</div>

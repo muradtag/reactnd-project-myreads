@@ -1,32 +1,32 @@
-import React, { useEffect, useState } from "react";
-import * as BooksAPI from "../BooksAPI";
+import React from "react";
+import PropTypes from "prop-types";
 import Title from "../Components/Title";
 import Shelf from "../Components/Shelf";
 import Fab from "../Components/Fab";
 
-const Home = () => {
-	const [books, setBooks] = useState([]);
-
-	useEffect(() => {
-		BooksAPI.getAll().then((books) => {
-			setBooks(books);
-		});
-	}, []);
+const Home = (props) => {
+	Home.prototype = {
+		books: PropTypes.array.isRequired,
+		upadateBookShelf: PropTypes.func.isRequired,
+	};
 
 	return (
 		<div className="list-books">
 			<Title />
 			<Shelf
-				books={books.filter((book) => book.shelf === "currentlyReading")}
+				books={props.books.filter((book) => book.shelf === "currentlyReading")}
 				title="Currently Reading"
+				upadateBookShelf={props.upadateBookShelf}
 			/>
 			<Shelf
-				books={books.filter((book) => book.shelf === "wantToRead")}
+				books={props.books.filter((book) => book.shelf === "wantToRead")}
 				title="Want to Read"
+				upadateBookShelf={props.upadateBookShelf}
 			/>
 			<Shelf
-				books={books.filter((book) => book.shelf === "read")}
+				books={props.books.filter((book) => book.shelf === "read")}
 				title="Read"
+				upadateBookShelf={props.upadateBookShelf}
 			/>
 			<Fab />
 		</div>
