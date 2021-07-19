@@ -5,19 +5,17 @@ import Home from "./Views/Home";
 import Search from "./Views/Search";
 import { Route } from "react-router-dom";
 
-class BooksApp extends React.Component {
-	render() {
-		return (
-			<div className="app">
-				<Route exact path="/">
-					<Home />
-				</Route>
-				<Route exact path="/search">
-					<Search />
-				</Route>
-			</div>
-		);
-	}
-}
+const BooksApp = () => {
+	return (
+		<div className="app">
+			<Route exact path="/">
+				<Home />
+			</Route>
+			<Route exact path="/search">
+				<Search />
+			</Route>
+		</div>
+	);
+};
 
 export default BooksApp;
