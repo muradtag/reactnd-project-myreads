@@ -1,9 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const BookShelfChanger = () => {
+const BookShelfChanger = (props) => {
+	BookShelfChanger.prototype = {
+		bookItem: PropTypes.object.isRequired,
+	};
+
 	return (
 		<div className="book-shelf-changer">
-			<select>
+			<select value={props.bookItem.shelf ? props.bookItem.shelf : "none"}>
 				<option value="move" disabled>
 					Move to...
 				</option>
