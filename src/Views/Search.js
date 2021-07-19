@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import * as BooksAPI from "../BooksAPI";
 import Book from "../Components/Book";
+import { DebounceInput } from "react-debounce-input";
 
 const Search = (props) => {
 	Search.prototype = {
@@ -37,7 +38,8 @@ const Search = (props) => {
 					Close
 				</Link>
 				<div className="search-books-input-wrapper">
-					<input
+					<DebounceInput
+						debounceTimeout={300}
 						type="text"
 						placeholder="Search by title or author"
 						value={query}
