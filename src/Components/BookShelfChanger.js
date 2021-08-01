@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const BookShelfChanger = (props) => {
-	BookShelfChanger.prototype = {
+	BookShelfChanger.proptypes = {
 		bookItem: PropTypes.object.isRequired,
 		upadateBookShelf: PropTypes.func.isRequired,
 	};

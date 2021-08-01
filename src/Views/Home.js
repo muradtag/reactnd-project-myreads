@@ -5,7 +5,7 @@ import Shelf from "../Components/Shelf";
 import Fab from "../Components/Fab";
 
 const Home = (props) => {
-	Home.prototype = {
+	Home.proptypes = {
 		books: PropTypes.array.isRequired,
 		upadateBookShelf: PropTypes.func.isRequired,
 	};

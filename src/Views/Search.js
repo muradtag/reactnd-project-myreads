@@ -6,7 +6,7 @@ import Book from "../Components/Book";
 import { DebounceInput } from "react-debounce-input";
 
 const Search = (props) => {
-	Search.prototype = {
+	Search.proptypes = {
 		upadateBookShelf: PropTypes.func.isRequired,
 		storedBooks: PropTypes.array.isRequired,
 	};

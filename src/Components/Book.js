@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import BookShelfChanger from "./BookShelfChanger";
 
 const Book = (props) => {
-	Book.prototype = {
+	Book.proptypes = {
 		bookItem: PropTypes.object.isRequired,
 		upadateBookShelf: PropTypes.func.isRequired,
 	};
